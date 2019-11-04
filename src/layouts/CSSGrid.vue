@@ -6,12 +6,16 @@
       </MainNav>
     </nav>
     <article class="content">
-        <h1>Main article area</h1>
-        <p>In this layout, we display the areas in source order for any screen less that 500 pixels wide. We go to a two column layout, and then to a three column layout by redefining the grid, and the placement of items on the grid.</p>
+      <h1>
+        Main article area
+      </h1>
+      <p>
+        In this layout, we display the areas in source order for any screen less that 500 pixels wide. We go to a two column layout, and then to a three column layout by redefining the grid, and the placement of items on the grid.
+      </p>
     </article>
     <aside class="side">Sidebar</aside>
-    <div class="ad">Advertising</div>
-    <footer class="main-footer">The footer</footer>
+    <div class="date">Advertising</div>
+    <footer class="title-area">The footer</footer>
   </div>
 </template>
 
@@ -42,10 +46,10 @@ export default {
 .side {
   grid-area: sidebar;
 }
-.ad {
-  grid-area: ad;
+.date {
+  grid-area: date;
 }
-.main-footer {
+.title-area {
   grid-area: footer;
 }
 
@@ -54,21 +58,21 @@ export default {
   grid-gap: 20px;
   grid-template-areas:
     "header"
+    "date"
     "nav"
     "content"
     "sidebar"
-    "ad"
     "footer";
 }
 
 @media (min-width: 500px) {
   .wrapper {
-    grid-template-columns: 1fr 3fr;
+    grid-template-columns: 3fr 1fr;
     grid-template-areas:
-      "header  header"
+      "header  date"
       "nav     nav"
       "sidebar content"
-      "ad      footer";
+      "time      footer";
   }
   nav ul {
     display: flex;
@@ -82,7 +86,7 @@ export default {
     grid-template-areas:
       "header header  header"
       "nav    content sidebar"
-      "nav    content ad"
+      "nav    content date"
       "footer footer  footer"
    }
    nav ul {
